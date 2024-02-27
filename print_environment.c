@@ -1,6 +1,6 @@
 #include "shell.h"
 /*
-*command paths are determined here
+*input command paths are determined here
 */
 
 void print_environment(void)

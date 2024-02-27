@@ -3,9 +3,9 @@
 <<<<<<< HEAD
 =======
 /**
- * read_command - Read a command from standard input
+ * read_command - This Reads a command from standard input given
  *
- * Return: Pointer a to the read command
+ * Return: it returns Pointer a to the read command
  */
 >>>>>>> refs/remotes/origin/main
 char *read_command(void)

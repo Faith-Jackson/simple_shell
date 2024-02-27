@@ -2,7 +2,7 @@
 #include <string.h>
 
 /**
- * exe comm - Execute commands in the shell
+ * exe comm - It Execute commands in the shell we have created
  * @command: The command prompts that is to be executed
  */
 void execute_command(char *command)
