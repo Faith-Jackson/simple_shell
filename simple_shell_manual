@@ -1,4 +1,4 @@
-.TH simple_shell_manuel "20 Feb 2024" "1.0" "Simple Shell Command Manual"
+.TH simple_shell_manuel "21 Feb 2024" "1.0" "Simple Shell Command Manual"
 
 .SH NAME
 simple_shell \- Command-line interface written in C for interaction with Linux operating systems.
@@ -31,4 +31,4 @@ $ ls -l
 A single space is required after each argument.
 
 .SH AUTHOR
-Faith Jackson, Anieyie Edem.
+Faith Jackson, Anieyie Asuquo.

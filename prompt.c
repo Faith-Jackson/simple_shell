@@ -2,7 +2,7 @@
 <<<<<<< HEAD
 
 /*
-*commands response are printed here
+*this are were commands response are printed
 */
 =======
 /**
