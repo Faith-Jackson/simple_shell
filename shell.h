@@ -18,6 +18,7 @@ void display_prompt(void);
 char *read_command(void);
 void execute_command(char *command);
 void print_environment(void);
+void handle_command(char *buffer);
 
 #endif /* SHELL_H */
 

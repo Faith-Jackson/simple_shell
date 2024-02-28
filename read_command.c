@@ -1,13 +1,10 @@
 #include "shell.h"
 
-<<<<<<< HEAD
-=======
 /**
  * read_command - This Reads a command from standard input given
  *
  * Return: it returns Pointer a to the read command
  */
->>>>>>> refs/remotes/origin/main
 char *read_command(void)
 {
     char *buffer = NULL;
@@ -16,7 +13,6 @@ char *read_command(void)
 
     write(STDOUT_FILENO, "#cisfun$ ", 9);
 
-<<<<<<< HEAD
     characters = getline(&buffer, &bufsize, stdin);
     if (characters == -1)
     {
@@ -34,9 +30,9 @@ char *read_command(void)
 
     buffer[characters - 1] = '\0'; /* newline character is removed */
     return buffer;
-=======
+
 	buffer[characters - 1] = '\0'; /* Removing newline character */
+
 	return (buffer);
->>>>>>> refs/remotes/origin/main
 }
 

@@ -1,45 +1,48 @@
 #include "shell.h"
-/*
-*This is the shell.c file which contains:
-*display prompt
-*print command
-*execute command
-*/
 
-int main(void)
+/**
+ * handle_command - Tokenizes the input command line and executes it
+ * @buffer: The input command line
+ */
+void handle_command(char *buffer)
 {
-    char *command;
+    char *args[ARGS_MAX];
+    pid_t pid;
+    int status;
 
-    while (1)
+    char *token = strtok(buffer, " ");
+    int i = 0;
+    while (token != NULL)
     {
-        display_prompt();
-        command = read_command();
-        if (strcmp(command, "exit") == 0)
-        {
-            free(command);
-            exit(EXIT_SUCCESS);
-        }
-        else if (strcmp(command, "env") == 0)
-        {
-<<<<<<< HEAD:shell.c
-            print_environment();
-=======
-            extern char **environ;  /* Declaring extern environ */
-            char **env = environ;
-            while (*env)
-            {
-                printf("%s\n", *env);
-                env++;
-            }
->>>>>>> refs/remotes/origin/main:main.c
-        }
-        else
-        {
-            execute_command(command);
-        }
-        free(command);
+        args[i++] = token;
+        token = strtok(NULL, " ");
+    }
+    args[i] = NULL; /* Null-terminate the args array */
+
+    /* Check if the command exists before forking */
+    if (access(args[0], X_OK) == -1)
+    {
+        perror("access");
+        return; /* Exit without forking if command does not exist */
     }
 
-    return 0;
+    pid = fork();
+    if (pid == -1)
+    {
+        perror("fork");
+        exit(EXIT_FAILURE);
+    }
+    if (pid == 0)
+    {
+        if (execvp(args[0], args) == -1)
+        {
+            perror("execvp");
+            exit(EXIT_FAILURE);
+        }
+    }
+    else
+    {
+        waitpid(pid, &status, 0);
+    }
 }
 
