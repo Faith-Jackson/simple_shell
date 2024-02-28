@@ -1,12 +1,18 @@
 #include "shell.h"
 
-int releaseMemory(void **memoryPtr)
+/**
+ * bfree - frees a pointer and NULLs the address
+ * @ptr: address of the pointer to free
+ *
+ * Return: 1 if freed, otherwise 0.
+ */
+int bfree(void **ptr)
 {
-    if (memoryPtr && *memoryPtr)
-    {
-        free(*memoryPtr);
-        *memoryPtr = NULL;
-        return (1);
-    }
-    return (0);
+	if (ptr && *ptr)
+	{
+		free(*ptr);
+		*ptr = NULL;
+		return (1);
+	}
+	return (0);
 }
