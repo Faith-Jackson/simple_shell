@@ -1,10 +1,10 @@
 #include "shell.h"
 
 /**
- * interactive - returns true if shell is interactive mode
- * @info: struct address
+ * interactive - returns true if shell is inter mode
+ * @info: struct add
  *
- * Return: 1 if interactive mode, 0 otherwise
+ * Return: 1 if inter mode, 0 otherwise
  */
 int interactive(info_t *info)
 {
@@ -40,9 +40,9 @@ int _isalpha(int c)
 }
 
 /**
- *_atoi - converts a string to an integer
- *@s: the string to be converted
- *Return: 0 if no numbers in string, converted number otherwise
+ *_atoi - converts a str to  an int
+ *@s: the str to be converted
+ *Return: 0 if no numbers in str
  */
 
 int _atoi(char *s)
